@@ -1,0 +1,45 @@
+/* CSS Document */
+body { margin:0; background-color:#f5f0e4 }
+.contenedor{ background-color:#FFF; width:100%; max-width:900px; min-width:300px; min-height:780px height:100px; }
+.titulo {font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; color: #000066; }
+.subtitulo {font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold;color: #000066; }
+th {font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #FFFFFF; background-color:#000066 }
+.advertencia {font-size: 18px; color: #FF0000; font-family: Arial, Helvetica, sans-serif; font-weight: bold; }
+
+
+/* La propidad responsive box-sizing:border-box; en los contenedores*/
+
+.encabezado img { width:100%; max-width:900px; height:auto;	}
+
+/*FORMULARIO*/
+input { color:  #5f5f5f; box-sizing: border-box; width: 250px; box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08); padding: 12px 18px; border: 1px solid #dbdbdb; }
+form div {
+	width:50%;
+	max-width:400px;
+	background-color:#f5f0e4;
+	padding:5px;
+}
+
+footer {
+	background-color:#ecd6a0;
+	color:#4169E1;
+	height:60px;
+	padding: 10px;
+	/* text-align:right; */
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+}
+
+@media screen and (max-width:800px) {
+	/*
+	body { background-color:#300}
+	*/
+
+	form div {
+	width:100%;
+	max-width:300px;
+	padding:1px;}
+		/*
+	input { color:  #5f5f5f; box-sizing: border-box; width: 100%; box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08); padding: 12px 18px; border: 1px solid #dbdbdb; }
+	*/
+}
