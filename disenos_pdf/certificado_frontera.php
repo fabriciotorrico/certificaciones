@@ -63,6 +63,9 @@
 <html>
 <?php include_once ("header_diseños.php"); ?>
  <body>
+   <div id="watermark">
+    <img src="imagenes/marca-agua.png" height="100%" width="100%" />
+   </div>
     <?php //Encabezado ?>
      <table width="100%" border="0">
        <tr>
@@ -411,3 +414,16 @@
        </div>
   </body>
 </html>
+
+<style>
+    #watermark {
+      position: fixed;
+      bottom:   10cm;
+      left:     5.5cm;
+      width:    8cm;
+      height:   8cm;
+      z-index:  -1000;
+      opacity: 0.2; /* Firefox, Chrome, Safari, Opera, IE >= 9 (preview) */
+      filter:alpha(opacity=2); /* for <= IE 8 */
+    }
+</style>

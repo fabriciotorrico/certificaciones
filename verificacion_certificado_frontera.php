@@ -1,17 +1,4 @@
 <?php
-  /*include("inc.config.php");
-  echo base64_encode(1);
-  //Decodificamos el id que se pasa por la url y lo pasamos como variable de sesion
-   $_SESSION['id'] = base64_decode($_GET["id"]);
-
-  //Incluimos el pdf.php para usar la función
-  include ('pdf.php');
-
-  //Utilizamos la función para generar el pdf, le pasamos la ruta del diseño y el nombre del pdf
-  generar_pdf("disenos_pdf/certificado_frontera.php", "Certificado de Frontera", "leter", "portrait");*/
-?>
-
-<?php
   include("inc.config.php");
   $link=Conectarse();
 
@@ -76,6 +63,18 @@
 
 <body>
 	<table width="900" border="0" align="center" bgcolor="#f5f0e4">
+    <br>
+    <tr>
+      <td colspan="3" style="background-color: #DCF4DC;">
+        <div class="encabezado">
+          <img src="imagenes/check.png" width="40" height="40">VERIFICADO
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3" style="background-color: #FFFFFF;">
+      </td>
+    </tr>
 		<tr>
       <td width="5%"></td>
     	<td>
@@ -333,7 +332,9 @@
             los datos t&eacute;cnicos se obtuvieron del Departamentod de <?php echo $datos['departamento'];?> a escala 1:50.000
           </div>
 
+
           <br>
+<?php /*
           <div class="valores_3">
             Es cuanto tengo a bien certificar en honor a la verdad y a petici&oacute;n escrita del/la interesado/a para los fines consiguientes.
           </div>
@@ -428,9 +429,61 @@
              <br>
              <?php echo $datos['igm_telefonos']." ".$datos['igm_mail']; ?>
            </div>
+           */ ?>
 			</td>
       <td width="5%"></td>
   	</tr>
 	</table>
 </body>
 </html>
+
+<?php
+  /*
+
+body:after {
+  content: "©";
+  font-size: 15em;
+  color: rgba(52, 166, 214, 0.4);
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  -webkit-pointer-events: none;
+  -moz-pointer-events: none;
+  -ms-pointer-events: none;
+  -o-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+  */
+?>
+<?php //Mara de agua?>
+<style media="screen">
+  body:after {
+    content: "";
+    background:url(imagenes/marca-agua.png) no-repeat;
+    background-size: 500px;
+    opacity: 0.2; /* Firefox, Chrome, Safari, Opera, IE >= 9 (preview) */
+    filter:alpha(opacity=2); /* for <= IE 8 */
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 100;
+    right: 0;
+    bottom: 0;
+    left: 500;
+  }
+</style>
