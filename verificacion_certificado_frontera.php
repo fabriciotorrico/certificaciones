@@ -476,14 +476,14 @@ body:after {
     content: "";
     background:url(imagenes/marca-agua.png) no-repeat;
     background-size: 500px;
-    opacity: 0.2; /* Firefox, Chrome, Safari, Opera, IE >= 9 (preview) */
-    filter:alpha(opacity=2); /* for <= IE 8 */
+    opacity: 0.1; /* Firefox, Chrome, Safari, Opera, IE >= 9 (preview) */
+    filter:alpha(opacity=1); /* for <= IE 8 */
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 100;
+    top: 5%;
     right: 0;
     bottom: 0;
-    left: 500;
+    left: 30%;
   }
 </style>
