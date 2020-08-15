@@ -38,6 +38,13 @@
   .valores {
 		font-size: 11px;
   }
+  .valores_2 {
+		font-size: 13px;
+    text-indent: 10px;
+  }
+  .valores_3 {
+		font-size: 13px;
+  }
   .valores_centrado {
 		font-size: 11px;
     text-align: center;
