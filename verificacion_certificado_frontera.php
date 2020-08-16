@@ -4,12 +4,17 @@
 
   //echo base64_encode(1);
   //Decodificamos el id que se pasa por la url y lo pasamos como variable de sesion
-  $id = base64_decode($_GET["id"]);;
+  //$id = base64_decode($_GET["id"]);;
+
+  //Tomamos los datos recibidos
+  $id = $_POST["nro_certificado"];
+  $ci = $_POST["ci"];
 
   //Tomamos los datos del certificado
   $sql  = "SELECT *
            FROM vista_certificadofrontera
-           WHERE id = '$id'";
+           WHERE id = '$id'
+            AND ci = '$ci'";
   $result = pg_query($link, $sql);
   $datos = pg_fetch_array($result, NULL, PGSQL_BOTH);
 
@@ -64,6 +69,28 @@
 <body>
 	<table width="900" border="0" align="center" bgcolor="#f5f0e4">
     <br>
+    <?php
+    //Si la busqueda no coincide con ningun certificado, mostramos el mensaje de error
+    if ($datos == "") {
+    ?>
+    <tr>
+      <td style="background-color: #F57F7F; text-align:center">
+        <div class="encabezado">
+          <img src="imagenes/cross.png" width="40" height="40">ERROR
+          <br>
+          El Número de certificado y cédula de identidad buscada, no coinciden con ningún certificado emitido por el Instituto Geográfico Militar.
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="index.php">Volver</a>
+      </td>
+    </tr>
+    <?php
+    }
+    else {
+    ?>
     <tr>
       <td colspan="3" style="background-color: #DCF4DC;">
         <div class="encabezado">
@@ -75,10 +102,10 @@
       <td colspan="3" style="background-color: #FFFFFF;">
       </td>
     </tr>
-		<tr>
+    <tr>
       <td width="5%"></td>
-    	<td>
-        <?php include_once ("header_diseños.php"); ?>
+      <td>
+        <?php include_once ("disenos_pdf/header_diseños.php"); ?>
         <?php //Encabezado ?>
          <table width="100%" border="0">
            <tr>
@@ -430,9 +457,12 @@
              <?php echo $datos['igm_telefonos']." ".$datos['igm_mail']; ?>
            </div>
            */ ?>
-			</td>
+      </td>
       <td width="5%"></td>
-  	</tr>
+    </tr>
+    <?php
+    }
+    ?>
 	</table>
 </body>
 </html>

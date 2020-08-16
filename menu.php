@@ -1,160 +1,199 @@
-<?php
-	//session_start();
-?>
+<?php include("verificar_login.php"); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>Slide Down Box Menu with jQuery and CSS3</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Slide Down Box Menu with jQuery and CSS3" />
+        <meta name="keywords" content="jquery, css3, sliding, box, menu, cube, navigation, portfolio, thumbnails"/>
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
+        <style>
+			body{
+				background:#333 url(bg.jpg) repeat top left;
+				font-family:Arial;
+			}
+			span.reference{
+				position:fixed;
+				left:10px;
+				bottom:10px;
+				font-size:12px;
+			}
+			span.reference a{
+				color:#aaa;
+				text-transform:uppercase;
+				text-decoration:none;
+				text-shadow:1px 1px 1px #000;
+				margin-right:30px;
+			}
+			span.reference a:hover{
+				color:#ddd;
+			}
+			ul.sdt_menu{
+				margin-top:150px;
+			}
+			h1.title{
+				text-indent:-9000px;
+				background:transparent url(title.png) no-repeat top left;
+				width:633px;
+				height:69px;
+			}
+		</style>
+    </head>
 
-<head>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!--link rel=”stylesheet” href=”css/font-awesome.min.css“-->
-</head>
-<LINK rel=stylesheet type=text/css href="nav-h.css">
-<SCRIPT type=text/javascript  src="nav-h.js"></SCRIPT>
-
-<style type="text/css">
-<!--
-.Estilo1 {font-size: 25px}
-.Estilo2 {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-.Estilo7 {color: #FF6633; font-weight: bold;}
-.Estilo10 {
-	font-family: Arial, Helvetica, sans-serif;
-	color: #333333;
-}
-.Estilo11 {color: #333333}
-.Estilo12 {
-	color: #0033CC;
-	font-weight: bold;
-}
-.Estilo13 {
-		color: #0033CC;
-		font-weight: bold;
-		font-size: 15px;
-}
--->
-</style>
-
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" >
-
-	<tr>
-		<td><img src="imagenes/encabezado_siim_web.jpg" alt="banner" width="900" height="250" longdesc="banner"></td>
-	</tr>
-
-	<tr>
-		<td>
-			<ul class="Estilo1" id=navmenu-h>
+    <body>
+		<div class="content">
+			<h1 class="title">Slide Down Box Menu with jQuery and CSS3</h1>
+			<ul id="sdt_menu" class="sdt_menu">
 				<li>
-					<a href="home.php">INICIO</a>
+					<a href="#">
+						<img src="images/2.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">CERTIFICAR</span>
+							<span class="sdt_descr">Ubicación Geográfica</span>
+						</span>
+					</a>
+					<div class="sdt_box">
+							<a href="#">Certificar</a>
+							<a href="#">Ingresos</a>
+							<a href="#">Administración</a>
+					</div>
+
 				</li>
-
 				<li>
-					<a href="#">MÓDULOS SIIM</a>
-					<ul>
-						<li>
-							<a href="#">LIQUIDACIÓN</a>
-								<ul>
-									<li>
-										<a href="liquidacion_inmuebles_seleccionar_form.php">INMUEBLES</a>
-									</li>
-									<li>
-										<a href="#">TRANSFERENCIAS IMT</a>
-										<ul>
-											<li>
-												<a href="transf_inm_seleccionar_vendedor_comprador_form.php">INMUEBLES</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-						</li>
-						<li>
-							<a href="#">RECAUDACIÓN</a>
-								<ul>
-									<li>
-										<a href="#">REGISTRAR PAGOS</a>
-										<ul>
-											<li>
-												<a href="pagos_seleccionar_inmueble_form.php">CAJAS GOBIERNO MUNICIPAL</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">LISTADOS DE RECAUDACIÓN</a>
-										<ul>
-											<li>
-												<a href="reporte_formatos_estandar_seleccionar_tipo_form.php">FORMATOS ESTÁNDAR</a>
-											</li>
-											<li>
-												<a href="reporte_rec_mensual_seleccionar_gestion_form.php">REC. MENSUAL</a>
-											</li>
-											<li>
-												<a href="reporte_periodos_fiscales_seleccionar_gestion_form.php">PERIODOS FISCALES</a>
-											</li>
-											<li>
-												<a href="reporte_sincom_seleccionar_tipo_form.php">REPORTES SINCOM</a>
-											</li>
-											<li>
-												<a href="reporte_rec_barrios_seleccinar_barrio_form.php">RECAUDACIÓN POR BARRIOS</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-						</li>
-					</ul>
+					<a href="#">
+						<img src="images/1.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">CERTIFICAR</span>
+							<span class="sdt_descr">Estaciones Continuas</span>
+						</span>
+					</a>
+					<div class="sdt_box">
+							<a href="#">Certificar</a>
+							<a href="#">Ingresos</a>
+							<a href="#">Administración</a>
+					</div>
 				</li>
-
 				<li>
-					<a href="#">MANTENIMIENTO</a>
-					<ul>
-						<li>
-							<a href="cotizacion_dolar_ufv_form.php">COTIZAR DOLAR / UFV</a>
-						</li>
-						<li>
-							<a href="#">PARÁMETROS GLBALES</a>
-								<ul>
-									<li>
-										<a href="personalizar_siim_form.php">PERSONALIZAR SIIM</a>
-									</li>
-									<li>
-										<a href="zonas_identificadas_form.php">ZONAS - IDENTIFICADAS</a>
-									</li>
-								</ul>
-						</li>
-						<li>
-							<a href="#">FECHAS DE VENCIMIENTO / DESCUENTOS</a>
-								<ul>
-									<li>
-										<a href="fechas_descuentos_form.php">INMUEBLES</a>
-									</li>
-								</ul>
-						</li>
-					</ul>
+					<a href="#">
+						<img src="images/3.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">CERTIFICAR</span>
+							<span class="sdt_descr">Cartografia</span>
+						</span>
+					</a>
+					<div class="sdt_box">
+							<a href="#">Certificar</a>
+							<a href="#">Ingresos</a>
+							<a href="#">Administración</a>
+					</div>
+
 				</li>
-
-				<!--li>
-					<a href="#">UTILITARIOS</a>
-					<ul>
-						<li>
-							<a href="exportar_bd.php">EXPORTAR BASE DE DATOS</a>
-						</li>
-					</ul>
-				</li-->
-
 				<li>
-					<a href="salir.php">SALIR</a>
+					<a href="#">
+						<img src="images/4.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">USUARIO</span>
+							<span class="sdt_descr">Administración</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/5.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Admin</span>
+							<span class="sdt_descr">Crear usuarios</span>
+						</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="images/6.jpg" alt=""/>
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+							<span class="sdt_link">Vacio</span>
+							<span class="sdt_descr">Vacio 1</span>
+						</span>
+					</a>
+					<div class="sdt_box">
+						<a href="#">Vacio 2</a>
+						<a href="#">Vacio 3</a>
+						<a href="#">Vacio 4</a>
+					</div>
 				</li>
 			</ul>
-		</td>
-	</tr>
+		</div>
+        <div>
+            <span class="reference">
+                <a href="http://google.com/">Tutoriales</a>
+				<a href="http://igmbolivia.gob.bo/">Pagina del IGM</a>
+            </span>
+		</div>
 
-  <tr>
-    <td height="30">
-			<p>
-				<br/>
-		    <span class="Estilo2">
-					<strong>&nbsp;&nbsp;USUARIO: </strong><?php echo $_SESSION['nombres_ss']." ".$_SESSION['apellidos_ss'] ;?>
-					<br/>
-				</span>
-			</p>
-    </td>
-  </tr>
-</table>
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+            $(function() {
+				/**
+				* for each menu element, on mouseenter,
+				* we enlarge the image, and show both sdt_active span and
+				* sdt_wrap span. If the element has a sub menu (sdt_box),
+				* then we slide it - if the element is the last one in the menu
+				* we slide it to the left, otherwise to the right
+				*/
+                $('#sdt_menu > li').bind('mouseenter',function(){
+					var $elem = $(this);
+					$elem.find('img')
+						 .stop(true)
+						 .animate({
+							'width':'170px',
+							'height':'170px',
+							'left':'0px'
+						 },400,'easeOutBack')
+						 .andSelf()
+						 .find('.sdt_wrap')
+					     .stop(true)
+						 .animate({'top':'140px'},500,'easeOutBack')
+						 .andSelf()
+						 .find('.sdt_active')
+					     .stop(true)
+						 .animate({'height':'170px'},300,function(){
+						var $sub_menu = $elem.find('.sdt_box');
+						if($sub_menu.length){
+							var left = '170px';
+							if($elem.parent().children().length == $elem.index()+1)
+								left = '-170px';
+							$sub_menu.show().animate({'left':left},200);
+						}
+					});
+				}).bind('mouseleave',function(){
+					var $elem = $(this);
+					var $sub_menu = $elem.find('.sdt_box');
+					if($sub_menu.length)
+						$sub_menu.hide().css('left','0px');
+
+					$elem.find('.sdt_active')
+						 .stop(true)
+						 .animate({'height':'0px'},300)
+						 .andSelf().find('img')
+						 .stop(true)
+						 .animate({
+							'width':'0px',
+							'height':'0px',
+							'left':'85px'},400)
+						 .andSelf()
+						 .find('.sdt_wrap')
+						 .stop(true)
+						 .animate({'top':'25px'},500);
+				});
+            });
+        </script>
+    </body>
+</html>

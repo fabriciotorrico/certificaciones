@@ -27,24 +27,8 @@ $contrasena_md5 = md5($contrasena);
   		$_SESSION['nombres_ss'] = $row['nombres'];
   		$_SESSION['apellidos_ss'] = $row['apellidos'];
 
-      //Tomamos la fecha actual
-      date_default_timezone_set('America/La_Paz');
-      $fecha_hoy = date("Y-m-d");
-
-      //Verificamos si hoy se realizo el registro de la cotizacion de dolar ufv
-      $sql  = "SELECT iddolarufv
-    					 FROM dolarufv
-    					 WHERE fecha = '$fecha_hoy'";
-    	$result = pg_query($link, $sql);
-
-    	//Si ya existe el registro, redireccionamos al inicio
-    	if ($row = pg_fetch_array($result, NULL, PGSQL_BOTH)){
-        header("Location: home.php");
-    	}
-    	//Caso contrario, al formulario para introducir la cotizacion
-    	else {
-        header("Location: cotizacion_dolar_ufv_form.php");
-    	}
+      //Redrieccionamos al menu
+      header("Location: menu.php");
   	}
     //En caso que no exista, reenviamos a la pagina de logeo
     else {
